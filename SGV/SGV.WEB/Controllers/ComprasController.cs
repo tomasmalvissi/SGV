@@ -31,6 +31,7 @@ namespace SGV.WEB.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Compra compra)
         {
+            compra.Fecha = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Compras.Add(compra);

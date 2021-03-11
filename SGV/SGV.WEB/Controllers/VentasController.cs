@@ -32,6 +32,7 @@ namespace SGV.WEB.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Venta venta)
         {
+            venta.Fecha = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Ventas.Add(venta);
